@@ -1,0 +1,44 @@
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+
+body {
+  background-color: grey;
+  font-family: 'Droid Sans', sans-serif;
+  background-image: url(http://fillmurray.com/1000/1000);
+  background-size: cover;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+nav ul {
+  padding-left: 0;
+}
+
+nav li {
+  list-style: none;
+  display: inline-block;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.main,  .side {
+  display: inline-block;
+}
+
+.main {
+  width: 80%;
+}
+
+.side {
+  width: 15%;
+  padding: 1em;
+  vertical-align: top;
+  background-color: rgba(0, 127, 127, 0.5);
+  border-radius: 1em;
+  text-align: right;
+}
