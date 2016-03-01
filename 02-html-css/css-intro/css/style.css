@@ -1,0 +1,36 @@
+/* CSS comment */
+body { /* tag name selector */
+  color: white; /* This colour is nice. */
+  background-color: pink;
+}
+
+ul li { /* descendent selector */
+  color: black;
+}
+
+h1 {
+  color: red;
+}
+
+p {
+  color: black;
+}
+
+footer p {
+  color: green;
+}
+
+li {
+  color: brown;
+}
+
+/* Class name selector */
+.highlight {
+  color: brown;
+  border: 1px solid red;
+}
+
+#featured {
+  text-decoration: underline;
+  font-style: italic;
+}
