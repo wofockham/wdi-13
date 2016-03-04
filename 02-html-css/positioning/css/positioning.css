@@ -1,0 +1,62 @@
+.box {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  text-align: center;
+  line-height: 200px;
+  /* default position:
+  position: static;
+  */
+/* horizontal centering
+  margin: 0 auto;
+*/
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+  top: 150px;
+  right: 200px;
+}
+
+.fixed {
+  position: fixed;
+  top: 200px;
+  right: 400px;
+}
+
+.example {
+  border: 1px dashed green;
+  position: relative;
+}
+
+.abs1 {
+  background-color: red;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.abs2 {
+  background-color: orange;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.abs3 {
+  background-color: yellow;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.abs4 {
+  background-color: green;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
