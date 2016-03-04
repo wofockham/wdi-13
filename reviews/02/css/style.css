@@ -1,0 +1,48 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+div.container {
+  width: 80%;
+  background-color: goldenrod;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+div.col {
+  float: left;
+  width: 33.3%;
+  /*padding: 10px;*/
+  /*width: -webkit-calc(100% / 3);*/
+  /*height: 200px;*/
+  background: hotpink;
+}
+
+p {
+  padding: 10px;
+}
+
+div.clear {
+  clear: both;
+}
+
+
+
+/*
+a {
+  width: 200px;
+  background: red;
+  display: inline-block;
+}
+
+p {
+  display: inline-block;
+}*/
