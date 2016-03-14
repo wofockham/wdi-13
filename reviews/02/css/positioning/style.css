@@ -1,0 +1,16 @@
+div#container {
+  margin: 0 auto;
+  position: relative;
+  left: 100px;
+  height: 400px;
+  width: 80%;
+  background: gainsboro;
+}
+
+div.position {
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background: hotpink;
+}
