@@ -1,0 +1,12 @@
+body {
+  background: papayawhip;
+}
+
+div.container {
+  margin: 0 auto;
+  width: 600px;
+}
+
+.border {
+  border: 1px solid black;
+}
