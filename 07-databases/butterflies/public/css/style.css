@@ -1,0 +1,17 @@
+body {
+  background-color: purple;
+  color: white;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+}
+
+nav {
+  text-align: right;
+}
+
+a {
+  color: white;
+}

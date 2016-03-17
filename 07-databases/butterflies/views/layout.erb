@@ -3,8 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Butterflies</title>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <%= yield %>
+  <div class="container">
+    <nav>
+      <a href="/butterflies">All butterflies</a>
+      <a href="/butterflies/new">New butterfly</a>
+    </nav>
+
+    <%= yield %>
+  </div>
 </body>
 </html>
