@@ -15,3 +15,21 @@ nav {
 a {
   color: white;
 }
+
+.controls {
+  text-align: right;
+}
+
+.controls a {
+  padding: 1em;
+  border-radius: 0.5em;
+}
+
+.controls a:hover {
+  background-color: red;
+}
+
+img.feature {
+  max-width: 100%;
+  border-radius: 0.5em;
+}

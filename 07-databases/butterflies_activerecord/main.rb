@@ -97,3 +97,11 @@ get '/plants/:id/edit' do
   @plant = Plant.find params[:id]
   erb :plants_edit
 end
+
+post '/plants/:id' do
+  plant = Plant.find params[:id]
+  plant.name = params[:name]
+  plant.image = params[:image]
+  plant.save
+  redirect '/plants'
+end

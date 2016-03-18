@@ -2,7 +2,9 @@
 <p>
   Family: <%= @butterfly.family %>
 </p>
-<img src="<%= @butterfly.image %>">
+<img class="feature" src="<%= @butterfly.image %>">
 
-<a href="/butterflies/<%= @butterfly.id %>/delete">Delete</a>
-<a href="/butterflies/<%= @butterfly.id %>/edit">Edit</a>
+<p class="controls">
+  <a href="/butterflies/<%= @butterfly.id %>/delete">Delete</a>
+  <a href="/butterflies/<%= @butterfly.id %>/edit">Edit</a>
+</p>

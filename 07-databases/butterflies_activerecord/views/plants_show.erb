@@ -1,5 +1,7 @@
 <h2><%= @plant.name %></h2>
-<img src="<%= @plant.image %>">
+<img class="feature" src="<%= @plant.image %>">
 
-<a href="/plants/<%= @plant.id %>/delete">Delete</a>
-<a href="/plants/<%= @plant.id %>/edit">Edit</a>
+<p class="controls">
+  <a href="/plants/<%= @plant.id %>/delete">Delete</a>
+  <a href="/plants/<%= @plant.id %>/edit">Edit</a>
+</p>
