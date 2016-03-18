@@ -69,3 +69,12 @@ get '/plants' do
   @plants = Plant.all
   erb :plants_index
 end
+
+get '/plants/new' do
+  erb :plants_new
+end
+
+get '/plants/:id' do
+  @plant = Plant.find params[:id]
+  erb :plants_show
+end
