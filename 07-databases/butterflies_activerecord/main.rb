@@ -13,6 +13,9 @@ ActiveRecord::Base.logger = Logger.new(STDERR)
 class Butterfly < ActiveRecord::Base
 end
 
+class Plant < ActiveRecord::Base
+end
+
 get '/' do
   erb :home
 end
@@ -60,4 +63,9 @@ post '/butterflies/:id' do
   butterfly.image = params[:image]
   butterfly.save
   redirect "/butterflies/#{ params[:id] }"
+end
+
+get '/plants' do
+  @plants = Plant.all
+  erb :plants_index
 end
