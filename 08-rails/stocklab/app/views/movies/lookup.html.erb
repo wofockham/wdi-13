@@ -1,0 +1,7 @@
+<h2><%= @result['Title'] %></h2>
+<% unless @result['Poster'] == 'N/A' %>
+  <img src="<%= @result['Poster'] %>">
+<% end %>
+<p>
+  <%= @result['Plot'] %>
+</p>
