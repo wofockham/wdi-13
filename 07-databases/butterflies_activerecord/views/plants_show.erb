@@ -1,4 +1,15 @@
 <h2><%= @plant.name %></h2>
+
+<% if @plant.butterflies.any? %>
+  <h3>Associated butterflies</h3>
+<% end %>
+
+<% @plant.butterflies.each do |butterfly| %>
+  <p>
+    <a href="/butterflies/<%= butterfly.id %>"><%= butterfly.name %></a>
+  </p>
+<% end %>
+
 <img class="feature" src="<%= @plant.image %>">
 
 <p class="controls">

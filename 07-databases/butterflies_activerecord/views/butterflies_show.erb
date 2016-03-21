@@ -2,6 +2,16 @@
 <p>
   Family: <%= @butterfly.family %>
 </p>
+<p>
+  Larval plant:
+  <% if @butterfly.plant %>
+    <a href="/plants/<%= @butterfly.plant.id %>">
+      <%= @butterfly.plant.name %>
+    </a>
+  <% else %>
+    Unknown
+  <% end %>
+</p>
 <img class="feature" src="<%= @butterfly.image %>">
 
 <p class="controls">
