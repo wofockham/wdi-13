@@ -1,0 +1,9 @@
+<h1>All Planets</h1>
+
+<% @planets.each do |planet| %>
+  <p>
+    <%= link_to(planet.name, "/planets/#{ planet.id }") %>
+    has
+    <%= pluralize(planet.moons, 'moon') %>
+  </p>
+<% end %>
