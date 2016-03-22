@@ -1,0 +1,14 @@
+<p>You have <%= pluralize(@friends, 'friend') %>.</p>
+<p>You have <%= pluralize(@enemies, 'enemy') %>.</p>
+
+<p><%= pluralize(7, 'ox') %></p>
+
+<p><%= truncate(@story, :length => 20) %></p>
+
+<ul>
+  <% @numbers.each do |n| %>
+    <li style="background-color: <%= cycle('red', 'green', 'orange', 'purple') %>">
+      <%= n %>
+    </li>
+  <% end %>
+</ul>
