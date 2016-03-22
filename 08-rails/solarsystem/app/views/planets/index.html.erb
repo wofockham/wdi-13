@@ -2,7 +2,7 @@
 
 <% @planets.each do |planet| %>
   <p>
-    <%= link_to(planet.name, "/planets/#{ planet.id }") %>
+    <%= link_to(planet.name, planet_path(planet.id)) %>
     has
     <%= pluralize(planet.moons, 'moon') %>
   </p>

@@ -1,1 +1,13 @@
 <h1><%= @planet.name %></h1>
+
+<p><%= image_tag @planet.image %></p>
+
+<p>Orbit: <%= @planet.orbit %></p>
+
+<p>Diameter: <%= @planet.diameter %></p>
+
+<p>Mass: <%= @planet.mass %></p>
+
+<p>Moons: <%= @planet.moons %></p>
+
+<%= button_to 'Destroy Planet', planet_delete_path(@planet.id) %>
