@@ -1,0 +1,7 @@
+<h1><%= @artist.name %></h1>
+<%= image_tag(@artist.image, :class => 'feature') %>
+<ul>
+  <li><%= @artist.nationality %></li>
+  <li><%= @artist.dob.strftime '%A %e %B, %Y' %></li>
+  <li><%= @artist.period %></li>
+</ul>
