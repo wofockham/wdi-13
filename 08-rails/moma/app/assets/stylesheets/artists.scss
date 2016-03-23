@@ -9,3 +9,22 @@
 .feature {
   max-width: 30em;
 }
+
+ul {
+  list-style: none;
+}
+
+fieldset {
+  border: none;
+  border-radius: 0.2em;
+}
+
+fieldset:hover {
+  background-color: #ccc;
+}
+
+label {
+  display: inline-block;
+  min-width: 85px;
+  text-align: right;
+}

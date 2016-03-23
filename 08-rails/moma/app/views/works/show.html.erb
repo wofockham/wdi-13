@@ -1,0 +1,12 @@
+<h1><%= @work.title %></h1>
+<%= image_tag(@work.image, :class => 'feature') %>
+<ul>
+  <% unless @work.artist.nil? %>
+    <li><%= link_to @work.artist.name, @work.artist %></li>
+  <% end %>
+  <li><%= @work.year %></li>
+  <li><%= @work.medium %></li>
+  <li><%= @work.style %></li>
+</ul>
+<%= link_to 'Edit work', edit_work_path(@work) %>
+<%= link_to 'Delete work', @work, :method => :delete %>

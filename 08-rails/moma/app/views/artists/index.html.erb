@@ -5,7 +5,7 @@
   <ul>
     <li><%= link_to(artist.name, artist) %></li>
     <li><%= artist.nationality %></li>
-    <li><%= artist.dob.strftime '%A %e %B, %Y' %></li>
+    <li><%= artist.dob.strftime '%A %e %B, %Y' unless artist.dob.nil? %></li>
     <li><%= artist.period %></li>
   </ul>
 <% end %>

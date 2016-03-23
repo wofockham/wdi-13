@@ -10,7 +10,9 @@
 #  image      :text
 #  created_at :datetime
 #  updated_at :datetime
+#  artist_id  :integer
 #
 
 class Work < ActiveRecord::Base
+  belongs_to :artist
 end
