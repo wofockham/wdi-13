@@ -37,7 +37,7 @@ g3.songs << s3
 Mixtape.destroy_all
 m1 = Mixtape.create :title => 'Make Out Music'
 m2 = Mixtape.create :title => 'Easter Tunes'
-m3 = Mixtape.create :tite => 'Code Jams'
+m3 = Mixtape.create :title => 'Code Jams'
 
 u1.mixtapes << m1 << m2
 u2.mixtapes << m3
