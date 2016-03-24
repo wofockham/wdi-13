@@ -1,0 +1,4 @@
+<h1>All Users: TOP SECRET</h1>
+<% @users.each do |user| %>
+  <p><%= user.email %> since <%= user.created_at %></p>
+<% end %>
