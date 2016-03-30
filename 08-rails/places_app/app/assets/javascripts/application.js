@@ -12,5 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require funtext
+//= require turbolinks
 //= require_tree .
