@@ -1,0 +1,9 @@
+<% @posts.reverse_each do |post| %>
+
+  <h1><%= post.heading %></h1>
+
+  <p><%= post.description %></p>
+
+  <%= cl_image_tag post.image_url %>
+
+<% end %>

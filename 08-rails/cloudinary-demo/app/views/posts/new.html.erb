@@ -1,0 +1,17 @@
+<%= form_for @post, url: "/posts", html: { multipart: true } do %>
+
+  <p>
+    <%= label_tag "Post Name: " %>
+    <%= text_field_tag :heading %>
+  </p>
+
+  <p>
+    <%= label_tag "Post Image: " %>
+    <%= file_field_tag :image_url %>
+  </p>
+
+  <p>
+    <%= submit_tag "Create Post" %>
+  </p>
+
+<% end %>
