@@ -33,6 +33,20 @@ describe Bank do
     end
   end
 
+  describe '#withdraw' do
+    it 'withdraws an amount from a customer\'s account' do
+      bank.create_account 'Gazza', 100
+      bank.withdraw 'Gazza', 50
+      expect(bank.balance('Gazza')).to eq 50
+    end
+
+    it 'ignores requests for withdrawals exceeding the account balance' do
+      bank.create_account 'Evil Guy', 1
+      bank.withdraw 'Evil Guy', 1_000_000
+      expect(bank.balance('Evil Guy')).to eq 1
+    end
+  end
+
   describe '#balance' do
     it 'returns the current balance for a given account' do
       bank.create_account 'Wes', 80
