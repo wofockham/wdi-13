@@ -3,6 +3,7 @@ $(document).ready(function () {
   var searchFlickr = function (term) {
     var flickrURL = 'https://api.flickr.com/services/rest/?jsoncallback=?';
     $.getJSON(flickrURL, {
+      // You can find additional params to add here in the docs
       method: 'flickr.photos.search',
       api_key: '2f5ac274ecfac5a455f38745704ad084',
       text: term,
@@ -30,7 +31,7 @@ $(document).ready(function () {
       photo.id,
       '_',
       photo.secret,
-      '_q.jpg'
+      '_q.jpg' // Different codes here select different image sizes
     ].join('');
   };
 
@@ -38,16 +39,19 @@ $(document).ready(function () {
     e.preventDefault();
 
     var query = $('#query').val();
-
     $('#results').empty();
-
     searchFlickr(query);
+
   });
 
   $(window).on('scroll', function () {
-    var pixelsFromBottom = $(document).height() - ($(window).scrollTop() + $(window).height());
+    var pixelsFromBottom =
+      $(document).height() -
+      ( $(window).scrollTop() + $(window).height() );
 
-    if (pixelsFromBottom < 500) {
+    var fetchThreshold = 500;
+
+    if (pixelsFromBottom < fetchThreshold) {
       console.log('near the bottom, HINT: SEARCH FLICKR MORE HERE');
     }
 
