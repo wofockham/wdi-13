@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
   var currentPage = 1;
-  var endOfResults = false;
-  var query;
+  var endOfResults = false; // We won't ask Flickr for results they don't have.
+  var query; // This stores the most recent search term.
 
   var searchFlickr = function (term) {
     if (endOfResults) {
@@ -28,6 +28,7 @@ $(document).ready(function () {
     });
   };
 
+  // We won't harass Flickr for new images more than once a second.
   var debouncedSearchFlickr = _.debounce(searchFlickr, 1000, true);
 
   var displayPhoto = function (url) {
@@ -52,7 +53,8 @@ $(document).ready(function () {
   $('#search').on('submit', function (e) {
     e.preventDefault();
 
-    $('#results').empty();
+    $('#results').empty(); // Remove the previous search results.
+    // Reset out globals.
     currentPage = 1;
     endOfResults = false;
     query = $('#query').val();
