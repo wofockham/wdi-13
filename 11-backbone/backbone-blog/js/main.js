@@ -54,13 +54,9 @@ var PostListView = Backbone.View.extend({
 var PostView = Backbone.View.extend({
   el: '#main',
   render: function () {
-    var $article = $('<article></article>');
-
-    $article.append('<h1>' + this.model.get('title') + '</h1>');
-    $article.append('<h2>' + 'By: ' + this.model.get('author') + '</h2>');
-    $article.append('<p>' + this.model.get('content') + '</p>');
-
-    this.$el.html( $article );
+    var postViewTemplate = $('#postViewTemplate').html();
+    var postViewHTML = _.template( postViewTemplate );
+    this.$el.html( postViewHTML( this.model.toJSON() )  );
   }
 });
 
