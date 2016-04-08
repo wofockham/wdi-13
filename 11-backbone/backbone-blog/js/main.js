@@ -1,3 +1,4 @@
+// Essentially your rails Post.rb model
 var Post = Backbone.Model.extend({
   defaults: {
     author: 'Anonymous',
@@ -6,11 +7,12 @@ var Post = Backbone.Model.extend({
   }
 });
 
+// ActiveRecord style collection of our model
 var Posts = Backbone.Collection.extend({
   model: Post
 });
 
-// Seed data
+// Seeds.rb data
 var posts = new Posts([
   new Post({
     id: 1,
@@ -26,7 +28,7 @@ var posts = new Posts([
 ]);
 
 var AppView = Backbone.View.extend({
-  el: '#main',
+  el: '#main', // Selector to specify where this view should appear on the page
   render: function () {
     var template = $('#appViewTemplate').html();
     this.$el.html(template);
@@ -60,6 +62,7 @@ var PostView = Backbone.View.extend({
   }
 });
 
+// Like your routes.rb, it connects URLs or paths with particular functions
 var Router = Backbone.Router.extend({
   routes: {
     '': 'index',
@@ -79,5 +82,5 @@ var Router = Backbone.Router.extend({
 var router = new Router();
 
 $(document).ready(function () {
-  Backbone.history.start();
+  Backbone.history.start(); // Starts the router and pays attention to changes in the URL.
 });
