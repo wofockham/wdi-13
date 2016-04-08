@@ -71,3 +71,50 @@ zoo.add(badger);
 zoo.add(panda, { at: 0 });
 
 zoo.remove( panda );
+
+var ZooView = Backbone.View.extend({
+  el: '#main',
+  events: {
+    'click h1': 'headerClick',
+    'click li': 'accessAnimal'
+  },
+  initialize: function () {
+    console.log('Zoo View initialized');
+  },
+  render: function () {
+    this.$el.append('<h1>We Bought A Zoo</h1>');
+    var $ul = this.$el.append('<ul></ul>');
+    this.collection.each(function (a) {
+      var $li = $('<li></li>');
+      $li.text(a.get('type'));
+      $ul.append($li);
+    });
+  },
+  headerClick: function (e) {
+    $(e.target).fadeTo(5000, 0.2);
+  },
+  accessAnimal: function () {
+    alert('That section of the zoo is closed');
+  }
+});
+
+var Router = Backbone.Router.extend({
+  routes: {
+    '': 'showZoo',
+    'secret': 'showSecret'
+  },
+  showZoo: function () {
+    var zv = new ZooView({collection: zoo});
+    zv.render();
+  },
+  showSecret: function () {
+    $('#main').html('I put bleach in your coffee');
+    $('#main').append('<a href="#">Home</a>')
+  }
+});
+
+var router = new Router();
+
+$(document).ready(function () {
+  Backbone.history.start();
+});
