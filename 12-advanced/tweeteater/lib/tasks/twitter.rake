@@ -15,4 +15,9 @@ namespace :twitter do
     Rake::Task['twitter:stats'].invoke
   end
 
+  # rake twitter:search[microsoft,50]
+  desc "Retrieve some number of tweets from Twitter matching the search term"
+  task :search, [:query, :limit] => :environment do |t, args|
+    # Your code goes here
+  end
 end
