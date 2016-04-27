@@ -1,0 +1,52 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$brand-color: limegreen;
+$spacing: 75px;
+
+@mixin centered {
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.post {
+  @include centered;
+  max-width: 50%;
+  border: 5px dashed $brand-color;
+  padding: $spacing / 3;
+  margin-bottom: 1em;
+
+  .author {
+    color: #777;
+    text-align: right;
+  }
+
+  .content {
+    font-style: italic;
+    font-size: 140%;
+
+    a {
+      color: $brand-color;
+      font-style: initial;
+    }
+  }
+}
+
+.notice {
+  padding: 2em;
+  background-color: blue;
+}
+
+.success {
+  @extend .notice;
+  background-color: green;
+}
+
+.error {
+  @extend .notice;
+  background-color: red;
+}
