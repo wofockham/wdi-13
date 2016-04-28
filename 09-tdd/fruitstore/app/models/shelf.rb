@@ -1,18 +1,12 @@
 # == Schema Information
 #
-# Table name: fruits
+# Table name: shelves
 #
 #  id         :integer          not null, primary key
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  name       :text
-#  type       :string
-#  shelf_id   :integer
 #
 
-class Fruit < ActiveRecord::Base
-  belongs_to :shelf
-  def squishy?
-    true
-  end
+class Shelf < ActiveRecord::Base
+  has_many :fruits
 end

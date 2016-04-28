@@ -10,9 +10,5 @@
 #  shelf_id   :integer
 #
 
-class Fruit < ActiveRecord::Base
-  belongs_to :shelf
-  def squishy?
-    true
-  end
+class Pear < Fruit
 end
