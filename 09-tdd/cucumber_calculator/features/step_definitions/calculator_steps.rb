@@ -7,9 +7,9 @@ Given(/^I have the number (\d+)$/) do |number|
 end
 
 When(/^I add them together$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  @result = @calculator.add
 end
 
-Then(/^I should see (\d+) in the terminal$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^I should see (\d+) in the terminal$/) do |num|
+  assert_equal @result, num.to_f
 end
