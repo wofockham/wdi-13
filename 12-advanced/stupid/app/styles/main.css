@@ -25,3 +25,12 @@ body {
   padding: 1em;
   border-radius: 1em;
 }
+
+.bubble {
+  position: absolute;
+  width: 3em;
+  height: 3em;
+  background-color: rgba(0, 200, 250, 0.6);
+  border: 1px solid blue;
+  border-radius: 100%;
+}
