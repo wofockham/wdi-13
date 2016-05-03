@@ -23,6 +23,41 @@ class SinglyLinkedList
     last.next = Node.new value
   end
 
+  def insert_after(node, new_node)
+  end
+
+  def shift # Acts like some_array.shift
+  end
+
+  def length
+  end
+
+  def find(needle)
+    # Return the first node with the value of needle
+  end
+
+  def reverse
+  end
+
+  def reverse!
+  end
+
+  def each
+  end
+
+  # Bonus
+  def map
+  end
+
+  def inject
+  end
+
+  def any?
+  end
+
+  def all?
+  end
+
   # Look at replacing this with a Ruby Struct
   class Node
     attr_accessor :value, :next
@@ -32,7 +67,6 @@ class SinglyLinkedList
     end
   end
 end
-
 
 require 'pry'
 binding.pry
