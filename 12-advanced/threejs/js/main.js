@@ -1,7 +1,7 @@
 var app = app || {};
 app.step = 0;
 
-app.numParticles = 4000;
+app.numParticles = 8000;
 app.particleDistribution = 600;
 
 app.controller = {
@@ -37,15 +37,29 @@ app.animateParticles = function() {
   for(var i = 0; i < verts.length; i++) {
 
     var vert = verts[i];
+    //
+    // if( vert.y < -app.particleDistribution/2) {
+    //   vert.y = Math.random() * app.particleDistribution/2; // - app.particleDistribution/2;
+    // }
+    //
+    // vert.y -= 0.95;
 
-    if( vert.y < -app.particleDistribution/2) {
-      vert.y = Math.random() * app.particleDistribution/2; // - app.particleDistribution/2;
-    }
+    var dist = Math.sqrt( vert.x * vert.x   +   vert.y * vert.y   +   vert.z * vert.z );
 
-    vert.y -= 0.95;
+    var force = (10.0 / (dist * dist)) * -0.05;
+
+    vert.vx += force * vert.x;
+    vert.vy += force * vert.y;
+    vert.vz += force * vert.z;
+
+
+    vert.x += vert.vx;
+    vert.y += vert.vy;
+    vert.z += vert.vz;
+
 
   }
-  app.particleSystem.rotation.y -= 0.008;
+  //app.particleSystem.rotation.y -= 0.008;
 
   app.particleSystem.geometry.verticesNeedUpdate = true;
 };
@@ -57,7 +71,7 @@ app.init = function() {
   app.width = window.innerWidth;
   app.height = window.innerHeight;
 
-  app.camera = new THREE.PerspectiveCamera(60, app.width/app.height, 0.1, 1000);
+  app.camera = new THREE.PerspectiveCamera(60, app.width/app.height, 0.1, 2000);
 
   app.camera.position.x = -30;
   app.camera.position.y = 40;
@@ -155,10 +169,14 @@ app.createParticleSystem = function() {
   for(var p  = 0; p < app.numParticles; p++) {
 
     var x = (Math.random() * app.particleDistribution) - app.particleDistribution/2;
-    var y = (Math.random() * app.particleDistribution) - app.particleDistribution/2;
-    var z = (Math.random() * app.particleDistribution) - app.particleDistribution/2;
+    var y = 100; //(Math.random() * app.particleDistribution) - app.particleDistribution/2;
+    var z = 100; //(Math.random() * app.particleDistribution) - app.particleDistribution/2;
 
     var particle = new THREE.Vector3( x, y, z );
+
+    particle.vx = Math.random() * 0.2;
+    particle.vy = Math.random() * 0.2;
+    particle.vz = Math.random() * 0.2;
 
     particles.vertices.push( particle );
   }
